@@ -41,12 +41,9 @@ julia> isfile(pngfile)
 true
 ```
 
-# See also
-- [`base32encode`](@ref) / [`base32decode`](@ref)  
-- [`generate_secret`](@ref)  
-- [`HOTP`](@ref), [`TOTP`](@ref)  
-- [`generate`](@ref), [`verify`](@ref)  
-- [`uri`](@ref), [`qrcode`](@ref)
+See also [`generate_secret`](@ref), [`AbstractOTP`](@ref), [`HOTP`](@ref), 
+[`TOTP`](@ref), [`generate`](@ref), [`verify`](@ref) [`uri`](@ref) and 
+[`qrcode`](@ref).
 """
 module OTPs
 
