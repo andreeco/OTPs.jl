@@ -57,8 +57,7 @@ using HTTP.URIs: escapeuri
 using CodecBase
 using QRCoders
 
-export base32encode, base32decode, generate_secret
-export AbstractOTP, HOTP, TOTP
+export generate_secret, AbstractOTP, HOTP, TOTP
 export generate, verify, uri, qrcode
 
 """
