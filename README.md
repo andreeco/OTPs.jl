@@ -67,11 +67,7 @@ https://andreeco.github.io/OTPs.jl/dev
 - `verify(::HOTP, ...)`, `verify(::TOTP, ...)`  
 - `uri(::HOTP/::TOTP, secret, account, issuer; ...)`  
 - `qrcode(uri; format, size, border, path)`  
-- `exportsvg(msg; size, border, path, darkcolor, lightcolor)`  
-- `base32encode/ base32decode`
-
-See the [full Reference](https://andreeco.github.io/OTPs.jl/dev/api/) for 
-details on every function and keyword.
+- `exportsvg(msg; size, border, path, darkcolor, lightcolor)`
 
 ## License
 
