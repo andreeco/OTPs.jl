@@ -55,19 +55,27 @@ true
 
 ## Documentation
 
-Full docs are auto-published at  
-https://andreeco.github.io/OTPs.jl/dev
+Full docs are auto-published at https://andreeco.github.io/OTPs.jl/dev
 
-## API at a glance
+## API
 
-- `OTPs.HOTP()`, `OTPs.TOTP()`  
-- `generate_secret()`  
-- `generate(::HOTP, secret, counter; digits, algorithm)`  
-- `generate(::TOTP, secret; time, period, digits, algorithm)`  
-- `verify(::HOTP, ...)`, `verify(::TOTP, ...)`  
-- `uri(::HOTP/::TOTP, secret, account, issuer; ...)`  
-- `qrcode(uri; format, size, border, path)`  
-- `exportsvg(msg; size, border, path, darkcolor, lightcolor)`
+### Types  
+- `AbstractOTP`:  abstract super-type for OTP generators  
+- `HOTP()`: counter-based (RFC 4226) OTP generator subtype of `AbstractOTP`  
+- `TOTP()`: time-based (RFC 6238) OTP generator subtype of `AbstractOTP`  
+
+### Functions  
+- `generate_secret([length=20])::String`  
+- `generate(::HOTP, secret, counter; digits=6, algorithm=:SHA1)::String`  
+- `generate(::TOTP, secret; period=30, digits=6, algorithm=:SHA1)::String`  
+- `verify(::HOTP, secret, counter, code; digits=6, algorithm=:SHA1)::Bool`  
+- `verify(::TOTP, secret, code; period=30, allowed_drift=1, digits=6, 
+algorithm=:SHA1)::Bool`  
+- `uri(::HOTP, secret, account, issuer; digits=6, counter=0, 
+algorithm=:SHA1)::String`  
+- `uri(::TOTP, secret, account, issuer; digits=6, period=30)::String`  
+- `qrcode(uri; format=:svg, size=240, border=4, path=nothing, 
+darkcolor="#000", lightcolor="#fff")`
 
 ## License
 
